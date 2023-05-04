@@ -1,12 +1,15 @@
-import { Flex } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { NavBar } from "./components/NavBar";
-import { LandingPage } from "./Pages/LandingPage";
+import { LandingPage } from "./Pages/LandingPage/LandingPage";
 
 export function App() {
-	return (
-		<>
-			<NavBar />
-			<LandingPage />
-		</>
-	);
+  return (
+    <>
+      <NavBar />
+
+      <Flex justify="center" backgroundColor="#FFF0F0">
+        <LandingPage />
+      </Flex>
+    </>
+  );
 }

@@ -1,14 +1,16 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React from "react";
+import { PreviewGallery } from "./components";
 
 export const LandingPage = () => {
 	return (
 		<>
 			<Box
-				backgroundColor="#FFF0F0"
+				// backgroundColor="#FFF0F0"
 				justifyContent="center"
 			>
 				<Flex
+					marginTop="2em"
 					padding="1em"
 					justify={{ md: "center" }}
 					flexDirection={{ base: "column", md: "row" }}
@@ -39,7 +41,7 @@ export const LandingPage = () => {
 				<Flex
 					width="100%"
 					justify="center"
-					marginTop="5em"
+					margin="5em 0"
 				>
 					<Button
 						backgroundColor="transparent"
@@ -53,7 +55,7 @@ export const LandingPage = () => {
 						Products
 					</Button>
 				</Flex>
-                
+                <PreviewGallery/>
 			</Box>
 		</>
 	);

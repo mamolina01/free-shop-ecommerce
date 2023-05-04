@@ -12,8 +12,8 @@ export const NavBar = () => {
 				shadow="md"
 				backgroundColor="#EBD4D4"
 			>
-				<Text color="#835858" fontSize="xl" fontWeight="bold" cursor="pointer" _hover={{color:"#463333"}}>
-					FreeShop
+				<Text color="#835858" fontSize="3xl" fontWeight="bold" cursor="pointer" _hover={{color:"#463333"}}>
+					freeShop
 				</Text>
 
 				<Flex
