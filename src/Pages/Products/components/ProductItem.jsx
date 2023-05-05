@@ -17,7 +17,7 @@ export const ProductItem = ({ product }) => {
 				gap="5px"
 				_hover={{
 					shadow: "2xl",
-					transition: "1s",
+					transition: "0.3s",
 				}}
 			>
 				<Flex flexDirection="column" width="100%">
@@ -45,7 +45,7 @@ export const ProductItem = ({ product }) => {
 					</Link>
 
 					<Text textAlign="center" color="black">
-						${product.price * 300}
+						${product.price}
 					</Text>
 				</Flex>
 
