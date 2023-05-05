@@ -1,5 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { BsList } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
 	return (
@@ -12,25 +13,46 @@ export const NavBar = () => {
 				shadow="md"
 				backgroundColor="#EBD4D4"
 			>
-				<Text color="#835858" fontSize="3xl" fontWeight="bold" cursor="pointer" _hover={{color:"#463333"}}>
-					freeShop
-				</Text>
+				<Link to="/">
+					<Text
+						color="#835858"
+						fontSize="3xl"
+						fontWeight="bold"
+						cursor="pointer"
+						_hover={{ color: "#463333" }}
+					>
+						freeShop
+					</Text>
+				</Link>
 
 				<Flex
 					gap="15px"
 					alignContent="center"
 					justify="space-between"
+					placeItems="center"
 					display={{ base: "none", md: "flex" }}
 				>
-					<Text color="#835858" fontSize="xl" fontWeight="600" cursor="pointer" _hover={{color:"#463333"}}>
+					<Text
+						color="#835858"
+						fontSize="xl"
+						fontWeight="600"
+						cursor="pointer"
+						_hover={{ color: "#463333" }}
+					>
 						Products
 					</Text>
-					<Text color="#835858" fontSize="xl" fontWeight="600" cursor="pointer" _hover={{color:"#463333"}}>
+					<Text
+						color="#835858"
+						fontSize="xl"
+						fontWeight="600"
+						cursor="pointer"
+						_hover={{ color: "#463333" }}
+					>
 						About
 					</Text>
 				</Flex>
 				<Flex display={{ base: "block", md: "none" }}>
-					<BsList color="#835858" size="35px" _hover={{color:"#463333"}} />
+					<BsList color="#835858" size="35px" _hover={{ color: "#463333" }} />
 				</Flex>
 			</Flex>
 		</>

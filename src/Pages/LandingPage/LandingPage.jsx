@@ -1,16 +1,17 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { PreviewGallery } from "./components";
+import { Link } from "react-router-dom";
+
 
 export const LandingPage = () => {
 	return (
 		<>
 			<Box
-				// backgroundColor="#FFF0F0"
 				justifyContent="center"
+				margin="2rem"
 			>
 				<Flex
-					marginTop="2em"
 					padding="1em"
 					justify={{ md: "center" }}
 					flexDirection={{ base: "column", md: "row" }}
@@ -43,6 +44,7 @@ export const LandingPage = () => {
 					justify="center"
 					margin="5em 0"
 				>
+					<Link to="/products">
 					<Button
 						backgroundColor="transparent"
 						border="2px solid black"
@@ -54,6 +56,8 @@ export const LandingPage = () => {
 					>
 						Products
 					</Button>
+					</Link>
+					
 				</Flex>
                 <PreviewGallery/>
 			</Box>
