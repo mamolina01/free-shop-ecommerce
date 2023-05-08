@@ -8,13 +8,18 @@ import { ProductDetailItem } from "./components";
 export const ProductDetailPage = () => {
 	const { productId } = useParams();
 	const { products: product, isLoading } = useGetProducts(productId);
+    // const product=[]
+    // const isLoading=true
 
 	return (
 		<>
-			<Flex justify="center" height="100vh" backgroundColor="#FFF0F0">
+			<Flex 
+			justify="center"  
+			backgroundColor="#FFF0F0"
+			>
 				{isLoading ? (
 					<>
-						<Flex justify="center">
+						<Flex justify="center" flexDirection="column" height="90vh">
 							<Spinner />
 						</Flex>
 					</>

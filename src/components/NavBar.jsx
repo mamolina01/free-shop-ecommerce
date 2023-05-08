@@ -32,15 +32,18 @@ export const NavBar = () => {
 					placeItems="center"
 					display={{ base: "none", md: "flex" }}
 				>
-					<Text
-						color="#835858"
-						fontSize="xl"
-						fontWeight="600"
-						cursor="pointer"
-						_hover={{ color: "#463333" }}
-					>
-						Products
-					</Text>
+					<Link to="/products">
+						<Text
+							color="#835858"
+							fontSize="xl"
+							fontWeight="600"
+							cursor="pointer"
+							_hover={{ color: "#463333" }}
+						>
+							Products
+						</Text>
+					</Link>
+
 					<Text
 						color="#835858"
 						fontSize="xl"
