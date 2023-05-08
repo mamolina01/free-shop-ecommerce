@@ -58,6 +58,4 @@ export const useFilterProducts = (products, filterItem, filterBy) => {
 		// }
 	}, [filterItem]);
 
-	// console.log(filteredProducts);
-	console.log(filteredProducts);
 };

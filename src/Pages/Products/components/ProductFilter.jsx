@@ -78,7 +78,7 @@ export const ProductFilter = ({ filter, setFilter }) => {
 						Price
 					</Text>
 
-					<Box
+					{/* <Box
 						display={activeFilter === "price" ? "" : "none"}
 						color="blackAlpha.700"
 					>
@@ -94,7 +94,7 @@ export const ProductFilter = ({ filter, setFilter }) => {
 							</Text>
 						))}
 						<Divider borderColor="blackAlpha.500" marginTop="0.5em" />
-					</Box>
+					</Box> */}
 
 					<Text
 						color={activeFilter === "rate" ? "black" : "blackAlpha.700"}
@@ -106,7 +106,7 @@ export const ProductFilter = ({ filter, setFilter }) => {
 						Rate
 					</Text>
 
-					<Box
+					{/* <Box
 						display={activeFilter === "rate" ? "" : "none"}
 						color="blackAlpha.700"
 					>
@@ -131,7 +131,7 @@ export const ProductFilter = ({ filter, setFilter }) => {
 							</>
 						))}
 						<Divider borderColor="blackAlpha.500" marginTop="0.5em" />
-					</Box>
+					</Box> */}
 				</Box>
 			</Flex>
 		</>

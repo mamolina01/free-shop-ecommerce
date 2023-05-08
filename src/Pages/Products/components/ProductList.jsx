@@ -1,13 +1,21 @@
 import { Button, Flex, Spinner, Text } from "@chakra-ui/react";
 import { useGetProducts } from "../../../hooks/";
 import { ProductItem } from "./ProductItem";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../../store";
 
 export const ProductList = () => {
 	const [page, setPage] = useState(1);
-	const { products, isLoading } = useGetProducts("", page);
+	// const { products, isLoading } = useGetProducts("", page);
 	// const products=[]
 	// const isLoading=true
+	const { products, isLoading } = useSelector((state) => state.products);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(getProducts());
+	}, []);
 
 	return (
 		<>
@@ -24,12 +32,7 @@ export const ProductList = () => {
 						</Flex>
 					</>
 				) : (
-					<Flex
-						textAlign="center"
-						justify="center"
-						flexWrap="wrap"
-						gap="2em"
-					>
+					<Flex textAlign="center" justify="center" flexWrap="wrap" gap="2em">
 						{products.map((product) => (
 							<ProductItem key={product.id} product={product} />
 						))}
