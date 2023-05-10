@@ -13,6 +13,7 @@ export const ProductList = ({ products, filteredProducts }) => {
     <>
       <Flex
         flexDirection="column"
+        margin="0 auto"
       >
         <Flex justify="center" padding="1em">
           <Text fontWeight="bold" fontSize="3xl">

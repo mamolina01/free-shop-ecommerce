@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { setProducts, startLoadingProducts, setFilteredProducts } from "./";
+import { setProducts, startLoadingProducts, setFilteredProducts,addToCart,removeFromCart } from "./";
 import { useSelector } from "react-redux";
 
 export const getProducts = () => {
@@ -36,9 +36,31 @@ export const setFilterProducts = ({item,type}) => {
             result = products.filter((product) => product.category == item);
             dispatch(setFilteredProducts(result));
             break;
-          case "clean":
+          case "":
             dispatch(setFilteredProducts([]))
         }
     }, [item]);
   };
 };
+
+export const addProductToCart=(product)=>{
+  const { shoppingCart } = useSelector((state) => state.products);
+
+  return (dispatch)=>{
+    let amount=shoppingCart.filter((item)=>item==product)
+    console.log(amount)
+    // dispatch(addToCart())
+  }
+}
+
+export const removeProduct=(product)=>{
+  const { shoppingCart } = useSelector((state) => state.products);
+
+  return (dispatch)=>{
+    console.log(product)
+    const temp = shoppingCart.filter((item)=>item==product)
+    console.log(temp)
+    // dispatch(removeProductToCart(temp))
+  }
+
+}

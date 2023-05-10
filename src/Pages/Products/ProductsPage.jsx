@@ -27,7 +27,7 @@ export const ProductsPage = () => {
       ) : (
         <>
           <Flex
-            justify="space-between"
+            // justify="space-between"
             height={{ md: "100vh" }}
             flexDirection={{ base: "column", md: "row" }}
           >

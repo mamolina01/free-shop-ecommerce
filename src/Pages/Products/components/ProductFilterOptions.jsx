@@ -15,6 +15,12 @@ export const ProductFilterOptions = ({
   const { categories } = useGetCategories(filter);
 
   const handleSetFilter = (value) => {
+    setShowFilter(false);
+    if (value === "") {
+      setFilter("");
+      onHandleFilterBy("");
+      return;
+    }
     const data = {
       item: value,
       type: filterBy,
@@ -53,9 +59,7 @@ export const ProductFilterOptions = ({
             cursor="pointer"
             textTransform="capitalize"
             color={filter.item === category ? "black" : "blackAlpha.700"}
-            onClick={() => {
-              `${handleSetFilter(category)} ${setShowFilter(false)}`;
-            }}
+            onClick={() => handleSetFilter(category)}
             _hover={{ color: "black" }}
           >
             {category}
@@ -88,9 +92,7 @@ export const ProductFilterOptions = ({
             marginLeft="0.5em"
             cursor="pointer"
             _hover={{ color: "black" }}
-            onClick={() => {
-              `${handleSetFilter(price)} ${setShowFilter(false)}`;
-            }}
+            onClick={() => handleSetFilter(price)}
           >
             $0 to ${price}
           </Text>
@@ -122,9 +124,7 @@ export const ProductFilterOptions = ({
             color={filter.item === rate ? "black" : "blackAlpha.700"}
             _hover={{ color: "black" }}
             marginLeft="0.5em"
-            onClick={() => {
-              `${handleSetFilter(rate)} ${setShowFilter(false)}`;
-            }}
+            onClick={() => handleSetFilter(rate)}
             cursor="pointer"
           >
             <BsFillStarFill fontSize="0.9em" />
@@ -134,17 +134,13 @@ export const ProductFilterOptions = ({
         ))}
         <Divider borderColor="blackAlpha.500" marginTop="0.5em" />
       </Box>
-      <Flex
-        display={filter?.item !== "" ? "" : "none"}
-        borderRadius="0.2em"
-        width="fit-content"
-        onClick={() => setFilter("")}
-      >
+      <Flex display={filter !== "" ? "flex" : "none"} borderRadius="0.2em">
         <Text
           textDecoration="underline"
           color="blackAlpha.700"
           cursor="pointer"
           _hover={{ color: "black" }}
+          onClick={() => handleSetFilter("")}
         >
           Clear Filters
         </Text>

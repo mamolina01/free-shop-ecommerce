@@ -16,6 +16,10 @@ export const ProductFilter = ({ filter, setFilter }) => {
   useEffect(() => {}, [filter, filterBy]);
 
   const onHandleFilterBy = (filterParam) => {
+    if (filterParam === "") {
+      setFilterBy("");
+      return;
+    }
     filterParam = filterParam.target.textContent.toLowerCase();
     if (filterParam === filterBy) {
       setFilterBy("");
@@ -43,7 +47,6 @@ export const ProductFilter = ({ filter, setFilter }) => {
             filterBy={filterBy}
             onHandleFilterBy={onHandleFilterBy}
             setShowFilter={setShowFilter}
-
           />
         </Box>
       </Flex>
@@ -69,7 +72,7 @@ export const ProductFilter = ({ filter, setFilter }) => {
           <Text>Filter</Text>
           <BsChevronDown />
         </Flex>
-       <Flex
+        <Flex
           position="absolute"
           zIndex="10"
           shadow="xl"
@@ -92,7 +95,7 @@ export const ProductFilter = ({ filter, setFilter }) => {
           />
         </Flex>
       </Flex>
-      
+
       <Flex
         display={{ base: showFilter ? "" : "none", md: "none" }}
         onClick={() => setShowFilter(!showFilter)}
