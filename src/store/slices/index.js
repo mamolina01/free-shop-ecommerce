@@ -1,2 +1,1 @@
-export * from "./productSlice";
-export * from "./thunks";
+export * from './products'

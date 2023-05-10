@@ -1,32 +1,27 @@
-import { Button, Flex, Image, Spinner, Text } from "@chakra-ui/react";
-import { FaShoppingCart } from "react-icons/fa";
+import { Flex, Spinner } from "@chakra-ui/react";
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import { useGetProducts } from "../../hooks";
+import { useParams } from "react-router-dom";
 import { ProductDetailItem } from "./components";
 
-export const ProductDetailPage = () => {
-	const { productId } = useParams();
-	const { products: product, isLoading } = useGetProducts(productId);
-    // const product=[]
-    // const isLoading=true
+import { useGetProducts } from "../../hooks";
 
-	return (
-		<>
-			<Flex 
-			justify="center"  
-			backgroundColor="#FFF0F0"
-			>
-				{isLoading ? (
-					<>
-						<Flex justify="center" flexDirection="column" height="90vh">
-							<Spinner />
-						</Flex>
-					</>
-				) : (
-					<ProductDetailItem product={product}/>
-				)}
-			</Flex>
-		</>
-	);
+export const ProductDetailPage = () => {
+  const { productId } = useParams();
+  const { products: product, isLoading } = useGetProducts(productId);
+
+  return (
+    <>
+      <Flex justify="center" >
+        {!!isLoading ? (
+          <>
+            <Flex justify="center" flexDirection="column" height="90vh">
+              <Spinner />
+            </Flex>
+          </>
+        ) : (
+          <ProductDetailItem product={product} />
+        )}
+      </Flex>
+    </>
+  );
 };

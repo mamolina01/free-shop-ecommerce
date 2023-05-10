@@ -12,10 +12,11 @@ export const NavBar = () => {
 				padding="0.5em 1em"
 				shadow="md"
 				backgroundColor="#EBD4D4"
+				color="#835858"
+
 			>
 				<Link to="/">
 					<Text
-						color="#835858"
 						fontSize="3xl"
 						fontWeight="bold"
 						cursor="pointer"
@@ -34,7 +35,6 @@ export const NavBar = () => {
 				>
 					<Link to="/products">
 						<Text
-							color="#835858"
 							fontSize="xl"
 							fontWeight="600"
 							cursor="pointer"
@@ -45,7 +45,6 @@ export const NavBar = () => {
 					</Link>
 
 					<Text
-						color="#835858"
 						fontSize="xl"
 						fontWeight="600"
 						cursor="pointer"

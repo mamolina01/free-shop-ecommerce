@@ -27,8 +27,8 @@ export const ProductDetailItem = ({ product }) => {
 					// marginTop="5em"
 					gap="3em"
 					_hover={{
-						shadow: "2xl",
-						transition: "1s",
+						shadow: "xl",
+						transition: "0.5s",
 					}}
 				>
 					<Flex backgroundColor="white" alignItems="center" cursor="pointer">
