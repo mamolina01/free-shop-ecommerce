@@ -8,7 +8,9 @@ export const ProductFilter = ({ filter, setFilter }) => {
   const [filterBy, setFilterBy] = useState([]);
   const [filterItem, setFilterItem] = useState("");
   const [showFilter, setShowFilter] = useState(false);
-
+  
+  useFilterProducts(filterItem,filterBy)
+  
   const onHandleFilterBy = (filterParam) => {
     if (filterParam === "") {
       setFilterBy("");
@@ -22,7 +24,8 @@ export const ProductFilter = ({ filter, setFilter }) => {
     }
   };
 
-  useFilterProducts(filterItem,filterBy)
+ 
+  
 
   return (
     <>
