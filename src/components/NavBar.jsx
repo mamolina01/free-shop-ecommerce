@@ -1,15 +1,14 @@
 import { Flex, Box, Text, Image, Divider } from "@chakra-ui/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BsList } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeFromCart } from "../store/slices/products/productsSlice";
+import { FreeShopContext } from "../context";
 
 export const NavBar = () => {
 	const [showCart, setShowCart] = useState(false);
-	const { shoppingCart } = useSelector((state) => state.products);
-	const dispatch = useDispatch();
+	const { shoppingCart } = useContext(FreeShopContext);
+
 
 	const maxCharacters = (value) => {
 		if (value.length > 20) {

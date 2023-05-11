@@ -1,19 +1,13 @@
 import { useEffect, useState } from "react";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import { useDispatch } from "react-redux";
-import { setFilterProducts } from "../../../store";
 import { BsChevronDown } from "react-icons/bs";
 import { ProductFilterOptions } from "./ProductFilterOptions";
+import { useFilterProducts } from "../../../hooks";
 
 export const ProductFilter = ({ filter, setFilter }) => {
   const [filterBy, setFilterBy] = useState([]);
   const [filterItem, setFilterItem] = useState("");
   const [showFilter, setShowFilter] = useState(false);
-
-  const dispatch = useDispatch();
-
-  dispatch(setFilterProducts(filterItem, filterBy));
-  useEffect(() => {}, [filter, filterBy]);
 
   const onHandleFilterBy = (filterParam) => {
     if (filterParam === "") {
@@ -27,6 +21,8 @@ export const ProductFilter = ({ filter, setFilter }) => {
       setFilterBy(filterParam);
     }
   };
+
+  useFilterProducts(filterItem,filterBy)
 
   return (
     <>

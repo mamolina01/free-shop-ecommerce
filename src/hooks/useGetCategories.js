@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export const useGetCategories = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [categories, setCategories] = useState([]);
+	
 	const manageApi = async () => {
 		try {
 			const response = await fetch(

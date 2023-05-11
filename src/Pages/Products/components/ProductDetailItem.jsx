@@ -3,11 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsCreditCard2Back, BsFillStarFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import { addProductToCart } from "../../../store";
 
 export const ProductDetailItem = ({ product }) => {
-  const dispatch = useDispatch();
 
   return (
     <>
@@ -80,7 +77,6 @@ export const ProductDetailItem = ({ product }) => {
                   backgroundColor: "black",
                   color: "white",
                 }}
-                onClick={() => dispatch(addProductToCart(product))}
               >
                 <FaShoppingCart />
                 Add to cart

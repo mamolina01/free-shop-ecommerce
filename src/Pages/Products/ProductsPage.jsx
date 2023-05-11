@@ -1,21 +1,15 @@
 import { Flex, Spinner } from "@chakra-ui/react";
 import { ProductList } from "./components/ProductList";
 import { ProductFilter } from "./components/ProductFilter";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../store";
+import { useContext, useEffect, useState } from "react";
+import { FreeShopContext } from "../../context";
+import { useGetProducts } from "../../hooks";
 
 export const ProductsPage = () => {
-  const { products,shoppingCart, filteredProducts,isLoading } = useSelector(
-    (state) => state.products
-  );
-  const dispatch = useDispatch();
+  const { products, filteredProducts, shoppingCart, isLoading } =
+    useContext(FreeShopContext);
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
-
-//   const isLoading=true
+  useGetProducts();
   return (
     <>
       {isLoading ? (

@@ -1,8 +1,6 @@
 import { Button, Flex, Spinner, Text } from "@chakra-ui/react";
 import { ProductItem } from "./ProductItem";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getProducts } from "../../../store";
+import { useContext, useEffect, useState } from "react";
 
 export const ProductList = ({ products, filteredProducts }) => {
   const [page, setPage] = useState(1);

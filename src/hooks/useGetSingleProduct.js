@@ -1,8 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { FreeShopContext } from "../context";
 
-export const useGetProducts = (query = "") => {
-  const { setProducts, setIsLoading } = useContext(FreeShopContext);
+export const useGetSingleProduct = (query = "") => {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const manageApi = async () => {
     try {
@@ -21,7 +22,6 @@ export const useGetProducts = (query = "") => {
     // setIsLoading(true)
     try {
       const products = await manageApi();
-      // console.log(products);
       setProducts(products);
     } catch (error) {
       console.log(error);
@@ -33,4 +33,6 @@ export const useGetProducts = (query = "") => {
     getProducts();
   }, []);
 
+
+  return { products, isLoading };
 };

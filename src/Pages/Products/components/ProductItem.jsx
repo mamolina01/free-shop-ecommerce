@@ -2,11 +2,8 @@ import { Button, Flex, Image, Text } from "@chakra-ui/react";
 import { FaShoppingCart } from "react-icons/fa";
 import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../../store/";
 
 export const ProductItem = ({ product }) => {
-	const dispatch = useDispatch();
 
 	return (
 		<>
@@ -65,7 +62,7 @@ export const ProductItem = ({ product }) => {
 						color: "white",
 					}}
 					// border="2px solid black"
-					onClick={() => dispatch(addToCart(product))}
+					
 				>
 					<FaShoppingCart />
 					Add to cart
