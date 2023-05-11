@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../store";
 
 export const ProductsPage = () => {
-  const { products, filteredProducts,isLoading } = useSelector(
+  const { products,shoppingCart, filteredProducts,isLoading } = useSelector(
     (state) => state.products
   );
   const dispatch = useDispatch();
@@ -36,6 +36,7 @@ export const ProductsPage = () => {
             <ProductList
               products={products}
               filteredProducts={filteredProducts}
+              shoppingCart={shoppingCart}
             />
           </Flex>
         </>
