@@ -38,7 +38,7 @@ export const ProductList = () => {
 							alignContent="center"
 							justify="center"
 							flexWrap="wrap"
-							gap="2em"
+							gap={{base:"1em",md:"2em"}}
 						>
 							{getProducts().map((product) => (
 								<ProductItem key={product.id} product={product} />

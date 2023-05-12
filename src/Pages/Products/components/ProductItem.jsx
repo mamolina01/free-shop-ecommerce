@@ -7,6 +7,15 @@ import { useContext } from "react";
 export const ProductItem = ({ product }) => {
 	const { addProduct } = useContext(FreeShopContext);
 
+	const maxCharacters = (value) => {
+		if (value.length > 35) {
+		  let newValue = value.slice(0, 35) + "...";
+		  return newValue;
+		} else {
+		  return value;
+		}
+	  };
+
 	return (
 		<>
 			<Flex
@@ -16,8 +25,8 @@ export const ProductItem = ({ product }) => {
 				justify="space-between"
 				backgroundColor="black"
 				padding="0.5em"
-				width="15em"
-				maxWidth="15em"
+				width={{base:"12em",md:"15em"}}
+				maxWidth={{base:"10em",md:"15em"}}
 				border="1px solid"
 				borderColor="blackAlpha.100"
 				gap="5px"
@@ -26,13 +35,13 @@ export const ProductItem = ({ product }) => {
 					transition: "0.3s",
 				}}
 			>
-				<Flex flexDirection="column" width="100%" _hover={{ color: "main" }}>
+				<Flex flexDirection="column" width="100%" _hover={{ color: "main" }} fontSize={{base:"sm",md:"md"}}>
 					<Link to={`/products/${product.id}`}>
 						<Flex backgroundColor="white" cursor="pointer">
 							<Image
 								src={product.image}
 								alt={product.title}
-								height="12em"
+								height={{base:"8em",md:"12em"}}
 								objectFit="contain"
 								width="100%"
 							/>
@@ -41,7 +50,7 @@ export const ProductItem = ({ product }) => {
 
 					<Link to={`/products/${product.id}`}>
 						<Text textAlign="center" fontWeight="bold" cursor="pointer">
-							{product.title}
+							{maxCharacters(product.title)}
 						</Text>
 					</Link>
 

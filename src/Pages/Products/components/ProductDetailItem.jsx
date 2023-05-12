@@ -1,10 +1,12 @@
 import { Button, Flex, Image, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsCreditCard2Back, BsFillStarFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
+import { FreeShopContext } from "../../../context";
 
 export const ProductDetailItem = ({ product }) => {
+	const { addProduct } = useContext(FreeShopContext);
 
   return (
     <>
@@ -75,6 +77,7 @@ export const ProductDetailItem = ({ product }) => {
                   backgroundColor: "main",
                   color: "white",
                 }}
+                onClick={()=>addProduct(product)}
               >
                 <FaShoppingCart />
                 Add to cart

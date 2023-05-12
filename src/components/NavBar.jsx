@@ -53,14 +53,16 @@ export const NavBar = () => {
             </Text>
           </Link>
 
-          <Text
-            fontSize="xl"
-            fontWeight="600"
-            cursor="pointer"
-            _hover={{ color: "main" }}
-          >
-            About
-          </Text>
+          <Link to="/aboutus">
+            <Text
+              fontSize="xl"
+              fontWeight="600"
+              cursor="pointer"
+              _hover={{ color: "main" }}
+            >
+              About
+            </Text>
+          </Link>
 
           <Flex
             padding="2px 10px"

@@ -17,22 +17,7 @@ export const ShoppingCart = () => {
 
   return (
     <>
-      {/* <Flex
-				display={showCart ? "flex" : "none"}
-				flexDirection="column"
-				position="absolute"
-				backgroundColor="white"
-				shadow="3xl"
-				right="1em"
-				zIndex="4"
-				width="20em"
-				maxWidth="20em"
-				maxHeight="280px"
-				overflowY="auto"
-				color="black"
-				border="1px solid"
-				borderColor="blackAlpha.800"
-			> */}
+
       <Flex borderBottom="1px solid #EEEEEE" width="100%">
         <Text marginLeft="1em" fontWeight="500">
           Shopping Cart
@@ -90,7 +75,6 @@ export const ShoppingCart = () => {
           </Flex>
         ))
       )}
-      {/* </Flex> */}
     </>
   );
 };

@@ -50,7 +50,7 @@ export const Menu = ({ showMenu, setShowMenu }) => {
               <Text fontSize="2xl">Products</Text>
             </Flex>
           </Link>
-          <Link>
+          <Link to="/aboutus">
             <Flex
               borderBottom="1px solid"
               padding="0.2em"
