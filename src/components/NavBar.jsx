@@ -1,41 +1,39 @@
-import { Flex, Box, Text, Image, Divider } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { BsList } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FreeShopContext } from "../context";
+import { ShoppingCart } from "./ShoppingCart";
+import { Menu } from "./Menu";
 
 export const NavBar = () => {
 	const [showCart, setShowCart] = useState(false);
+	const [showMenu, setShowMenu] = useState(false);
 	const { shoppingCart } = useContext(FreeShopContext);
-
-
-	const maxCharacters = (value) => {
-		if (value.length > 20) {
-			let newValue = value.slice(0, 22) + "...";
-			return newValue;
-		} else {
-			return value;
-		}
-	};
 
 	return (
 		<>
+			<Menu
+				showMenu={showMenu}
+				setShowMenu={setShowMenu}
+				setShowCart={setShowCart}
+			/>
 			<Flex
 				alignContent="center"
 				justify="space-between"
 				width="100%"
 				padding="0.5em 1em"
 				shadow="md"
-				backgroundColor="#EBD4D4"
-				color="#835858"
+				backgroundColor="black"
+				color="white"
 			>
 				<Link to="/">
 					<Text
 						fontSize="3xl"
 						fontWeight="bold"
 						cursor="pointer"
-						_hover={{ color: "#463333" }}
+						_hover={{ color: "main" }}
 					>
 						freeShop
 					</Text>
@@ -53,7 +51,7 @@ export const NavBar = () => {
 							fontSize="xl"
 							fontWeight="600"
 							cursor="pointer"
-							_hover={{ color: "#463333" }}
+							_hover={{ color: "main" }}
 						>
 							Products
 						</Text>
@@ -63,73 +61,38 @@ export const NavBar = () => {
 						fontSize="xl"
 						fontWeight="600"
 						cursor="pointer"
-						_hover={{ color: "#463333" }}
+						_hover={{ color: "main" }}
 					>
 						About
 					</Text>
 
 					<Flex
 						padding="2px 10px"
-						backgroundColor="#835858"
-						color="#EBD4D4"
+						border=" 1px solid white"
+						color="white"
 						borderRadius="5px"
 						cursor="pointer"
-						_hover={{ backgroundColor: "#463333" }}
+						placeItems="center"
+						gap="0.2em"
+						_hover={{ color: "main", borderColor: "main" }}
 						onClick={() => setShowCart(!showCart)}
 					>
 						<Text>{shoppingCart.length}</Text>
-						<FaShoppingCart size="1.5em" />
+						<FaShoppingCart size="1.2em" />
 					</Flex>
 				</Flex>
 
-				<Flex display={{ base: "block", md: "none" }}>
-					<BsList color="#835858" size="35px" _hover={{ color: "#463333" }} />
+				<Flex display={{ base: "block", md: "none" }} alignSelf="center">
+					<BsList
+						color="white"
+						size="35px"
+						_hover={{ color: "main" }}
+						onClick={() => setShowMenu(true)}
+					/>
 				</Flex>
 			</Flex>
-			<Flex
-				display={showCart ? "flex" : "none"}
-				flexDirection="column"
-				position="absolute"
-				backgroundColor="white"
-				shadow="xl"
-				right="1em"
-				zIndex="4"
-				maxWidth="20em"
-				maxHeight="280px"
-				overflowY="scroll"
-			>
-				{shoppingCart.map((item) => (
-					<Flex
-						padding="1em"
-						borderBottom="1px solid #EEEEEE"
-						gap="1em"
-						fontSize="sm"
-						color="blackAlpha.800"
-						key={`navbar ${item.title}`}
-					>
-						<Image
-							src={item.image}
-							alt={item.title}
-							objectFit="contain"
-							height="4em"
-							width="4em"
-						/>
-						<Flex flexDirection="column">
-							<Text>{maxCharacters(item.title)}</Text>
-							<Text color="black" fontWeight="bold">
-								${item.price}
-							</Text>
-							<Text
-								textDecoration="underline"
-								cursor="pointer"
-								onClick={() => dispatch(removeFromCart(item))}
-							>
-								Eliminar
-							</Text>
-						</Flex>
-					</Flex>
-				))}
-			</Flex>
+
+			<ShoppingCart showCart={showCart} setShowCart={setShowCart} />
 		</>
 	);
 };

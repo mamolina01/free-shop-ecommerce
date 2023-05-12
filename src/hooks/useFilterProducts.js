@@ -4,7 +4,8 @@ import { FreeShopContext } from "../context";
 import { useGetProducts } from "./useGetProducts";
 
 export const useFilterProducts = (filterItem, filterBy) => {
-	const { products, setFilteredProducts,setIsLoading } = useContext(FreeShopContext);
+	const { products, setFilteredProducts, setIsLoading } =
+		useContext(FreeShopContext);
 
 	const manageApi = async () => {
 		try {
@@ -21,7 +22,7 @@ export const useFilterProducts = (filterItem, filterBy) => {
 	};
 
 	const getCategories = async () => {
-		setIsLoading(true)
+		setIsLoading(true);
 		try {
 			const result = await manageApi();
 			setFilteredProducts(result);
@@ -32,26 +33,23 @@ export const useFilterProducts = (filterItem, filterBy) => {
 	};
 
 	useEffect(() => {
-		// console.log(filterBy);
-		// console.log(`filterItem: ${filterItem}`);
 		let result = [];
-		if (filterItem !== "") {
-			switch (filterBy) {
-				case "price":
-					result = products.filter((product) => product.price < filterItem);
-					setFilteredProducts(result);
-					break;
-				case "rate":
-					result = products.filter(
-						(product) => product.rating.rate < filterItem
-					);
-					setFilteredProducts(result);
-					break;
-				case "category":
-					getCategories(filterItem);
-          // setFilteredProducts(result);
-					break;
-			}
+		switch (filterBy) {
+			case "price":
+				result = products.filter((product) => product.price < filterItem);
+				setFilteredProducts(result);
+				break;
+			case "rate":
+				result = products.filter((product) => product.rating.rate < filterItem);
+				setFilteredProducts(result);
+				break;
+			case "category":
+				getCategories(filterItem);
+				// setFilteredProducts(result);
+				break;
+			case "":
+				setFilteredProducts([]);
+				break;
 		}
 	}, [filterItem]);
 };

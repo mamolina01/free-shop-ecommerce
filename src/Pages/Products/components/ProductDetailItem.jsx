@@ -9,21 +9,20 @@ export const ProductDetailItem = ({ product }) => {
   return (
     <>
       <Flex flexDirection="column" justify="center" gap="0.5em" margin="2em 0">
-        <Flex gap="0.5em" color="blackAlpha.700">
+        <Flex gap="0.5em" color="whiteAlpha.700">
           <Link to="/products">
             <Text cursor="pointer">Go Back</Text>
           </Link>
           <Text>|</Text>
-          <Text color="black" fontWeight="bold" textTransform="uppercase">
+          <Text color="white" fontWeight="bold" textTransform="uppercase">
             {product.category}
           </Text>
         </Flex>
         <Flex
           flexDirection={{ base: "column", md: "row" }}
-          backgroundColor="#EBD4D4"
+          backgroundColor="black"
           height="fit-content"
           padding="1em"
-          // marginTop="5em"
           gap="3em"
           _hover={{
             shadow: "xl",
@@ -42,20 +41,19 @@ export const ProductDetailItem = ({ product }) => {
 
           <Flex flexDirection="column" justify="space-between">
             <Flex flexDirection="column" maxWidth="20em">
-              <Text fontWeight="bold" color="black" cursor="pointer">
+              <Text fontWeight="bold" color="main" cursor="pointer">
                 {product.title}
               </Text>
-              <Flex alignItems="center" color="black" gap="5px">
+              <Flex alignItems="center" color="white" gap="5px">
                 <Text>{product.rating.rate}</Text>
                 <BsFillStarFill />
-                <Text fontSize="sm" color="blackAlpha.700">
+                <Text fontSize="sm" color="whiteAlpha.700">
                   {"("}
                   {product.rating.count} reviews{")"}
                 </Text>
               </Flex>
               <Text
-                color="blackAlpha.700"
-                // fontWeight="bold"
+                color="white"
                 fontSize="3xl"
               >
                 ${product.price}
@@ -72,9 +70,9 @@ export const ProductDetailItem = ({ product }) => {
               <Button
                 fontSize="sm"
                 backgroundColor="transparent"
-                border="1px solid black"
+                border="1px solid white"
                 _hover={{
-                  backgroundColor: "black",
+                  backgroundColor: "main",
                   color: "white",
                 }}
               >

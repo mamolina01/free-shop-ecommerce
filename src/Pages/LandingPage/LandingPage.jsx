@@ -12,12 +12,13 @@ export const LandingPage = () => {
 				margin="2rem"
 			>
 				<Flex
-					padding="1em"
+					
+					gap={{base:"0",md:"2em"}}
 					justify={{ md: "center" }}
+					alignItems="center"
 					flexDirection={{ base: "column", md: "row" }}
 				>
 					<Text
-						color="black"
 						fontFamily="serif"
 						fontWeight="bold"
 						fontSize="60px"
@@ -25,8 +26,6 @@ export const LandingPage = () => {
 						Buy Now,
 					</Text>
 					<Text
-						marginLeft="1em"
-						color="black"
 						fontFamily="serif"
 						fontWeight="bold"
 						fontSize="60px"
@@ -35,7 +34,7 @@ export const LandingPage = () => {
 					</Text>
 				</Flex>
 				<Flex justify="center">
-					<Text color="black" textAlign="center" fontFamily="serif" fontSize="35px">
+					<Text  textAlign="center" fontFamily="serif" fontSize="35px">
 						Leave fashion in our hands.
 					</Text>
 				</Flex>
@@ -47,11 +46,12 @@ export const LandingPage = () => {
 					<Link to="/products">
 					<Button
 						backgroundColor="transparent"
-						border="2px solid black"
-						color="black"
+						border="2px solid white"
 						_hover={{
-							color: "#835858",
-							borderColor: "#835858",
+							backgroundColor:"main"
+						}}
+						_active={{
+							backgroundColor:"main"
 						}}
 					>
 						Products

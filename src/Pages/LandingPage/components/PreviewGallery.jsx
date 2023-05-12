@@ -8,7 +8,7 @@ export const PreviewGallery = () => {
 		<Grid
 			templateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,1fr)" }}
 			gap="1rem"
-			backgroundColor="#EBD4D4"
+			backgroundColor="white"
 			padding="1em"
 			margin="2em"
 		>

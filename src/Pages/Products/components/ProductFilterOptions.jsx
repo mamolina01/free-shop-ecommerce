@@ -10,25 +10,18 @@ export const ProductFilterOptions = ({
 	setFilter,
 	filterBy,
 	onHandleFilterBy,
-	setShowFilter,
 }) => {
 	const { categories } = useGetCategories(filter);
 
 	return (
 		<>
 			<Text
-				color={
-					filter.type === "category"
-						? "black"
-						: filterBy === "category"
-						? "black"
-						: "blackAlpha.700"
-				}
+				color={filterBy === "category" ? "white" : "whiteAlpha.800"}
 				fontSize="xl"
 				cursor="pointer"
 				width="7em"
-				_click={{ color: "black" }}
-				_hover={{ color: "black" }}
+				_click={{ color: "white" }}
+				_hover={{ color: "white" }}
 				onClick={(e) => onHandleFilterBy(e)}
 			>
 				Category
@@ -41,30 +34,25 @@ export const ProductFilterOptions = ({
 				{categories.map((category) => (
 					<Text
 						key={category}
-						marginLeft="0.5em"
+						// marginLeft="0.5em"
+						marginLeft={filter === category ? "1em" : "0.5"}
 						cursor="pointer"
 						textTransform="capitalize"
-						color={filter === category ? "black" : "blackAlpha.700"}
+						color={filter === category ? "white" : "whiteAlpha.800"}
 						onClick={() => setFilter(category)}
-						_hover={{ color: "black" }}
+						_hover={{ color: "white" }}
 					>
 						{category}
 					</Text>
 				))}
-				<Divider borderColor="blackAlpha.500" marginTop="0.5em" />
+				<Divider borderColor="whiteAlpha.500" marginTop="0.5em" />
 			</Box>
 
 			<Text
-				color={
-					filter.type === "price"
-						? "black"
-						: filterBy === "price"
-						? "black"
-						: "blackAlpha.700"
-				}
+				color={filterBy === "price" ? "white" : "whiteAlpha.800"}
 				fontSize="xl"
 				cursor="pointer"
-				_hover={{ color: "black" }}
+				_hover={{ color: "white" }}
 				onClick={(e) => onHandleFilterBy(e)}
 			>
 				Price
@@ -73,30 +61,24 @@ export const ProductFilterOptions = ({
 			<Box display={filterBy === "price" ? "" : "none"}>
 				{prices.map((price) => (
 					<Text
-						color={filter === price ? "black" : "blackAlpha.700"}
+						color={filter === price ? "white" : "whiteAlpha.800"}
 						key={price}
-						marginLeft="0.5em"
+						marginLeft={filter === price ? "1em" : "0.5"}
 						cursor="pointer"
-						_hover={{ color: "black" }}
+						_hover={{ color: "white" }}
 						onClick={() => setFilter(price)}
 					>
 						$0 to ${price}
 					</Text>
 				))}
-				<Divider borderColor="blackAlpha.500" marginTop="0.5em" />
+				<Divider borderColor="whiteAlpha.500" marginTop="0.5em" />
 			</Box>
 
 			<Text
-				color={
-					filter.type === "rate"
-						? "black"
-						: filterBy === "rate"
-						? "black"
-						: "blackAlpha.700"
-				}
+				color={filterBy === "rate" ? "white" : "whiteAlpha.800"}
 				fontSize="xl"
 				cursor="pointer"
-				_hover={{ color: "black" }}
+				_hover={{ color: "white" }}
 				onClick={(e) => onHandleFilterBy(e)}
 			>
 				Rate
@@ -107,9 +89,9 @@ export const ProductFilterOptions = ({
 					<Flex
 						key={rate}
 						alignItems="center"
-						color={filter === rate ? "black" : "blackAlpha.700"}
-						_hover={{ color: "black" }}
-						marginLeft="0.5em"
+						color={filter === rate ? "white" : "whiteAlpha.800"}
+						marginLeft={filter === rate ? "1em" : "0.5"}
+						_hover={{ color: "white" }}
 						onClick={() => setFilter(rate)}
 						cursor="pointer"
 					>
@@ -118,15 +100,15 @@ export const ProductFilterOptions = ({
 						<Text marginLeft="0.5em">0 to {rate}</Text>
 					</Flex>
 				))}
-				<Divider borderColor="blackAlpha.500" marginTop="0.5em" />
+				<Divider borderColor="whiteAlpha.500" marginTop="0.5em" />
 			</Box>
 			<Flex display={filter !== "" ? "flex" : "none"} borderRadius="0.2em">
 				<Text
 					textDecoration="underline"
-					color="blackAlpha.700"
+					color="whiteAlpha.800"
 					cursor="pointer"
-					_hover={{ color: "black" }}
-					onClick={() => setFilter("clear")}
+					_hover={{ color: "white" }}
+					onClick={() => onHandleFilterBy("")}
 				>
 					Clear Filters
 				</Text>

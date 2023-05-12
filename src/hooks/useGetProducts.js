@@ -18,10 +18,8 @@ export const useGetProducts = (query = "") => {
   };
 
   const getProducts = async () => {
-    // setIsLoading(true)
     try {
       const products = await manageApi();
-      // console.log(products);
       setProducts(products);
     } catch (error) {
       console.log(error);
