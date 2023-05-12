@@ -48,10 +48,10 @@ export const LandingPage = () => {
 						backgroundColor="transparent"
 						border="2px solid white"
 						_hover={{
-							backgroundColor:"main"
+							backgroundColor:"black"
 						}}
 						_active={{
-							backgroundColor:"main"
+							backgroundColor:"black"
 						}}
 					>
 						Products
