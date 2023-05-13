@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FreeShopContext } from "./FreeShopContext";
 
 export const FreeShopProvider = ({ children }) => {
@@ -12,11 +12,16 @@ export const FreeShopProvider = ({ children }) => {
 		if (!exists) {
 			newProduct.amount = 1;
 			setShoppingCart([...shoppingCart, newProduct]);
+			localStorage.setItem(
+				"shoppingCart",
+				JSON.stringify([...shoppingCart, newProduct])
+			);
 		} else {
 			const tempCart = [...shoppingCart];
 			const item = tempCart.find((item) => item.id === newProduct.id);
 			item.amount = item.amount + 1;
 			setShoppingCart(tempCart);
+			localStorage.setItem("shoppingCart", JSON.stringify(tempCart));
 		}
 	};
 
@@ -26,6 +31,13 @@ export const FreeShopProvider = ({ children }) => {
 		);
 		setShoppingCart(newShoppingCart);
 	};
+
+	useEffect(() => {
+		const products = JSON.parse(localStorage.getItem("shoppingCart"));
+		if (products) {
+			setShoppingCart(products);
+		}
+	}, []);
 
 	return (
 		<FreeShopContext.Provider

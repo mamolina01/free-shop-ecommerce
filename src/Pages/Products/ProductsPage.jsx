@@ -1,4 +1,4 @@
-import { Flex, Spinner } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { ProductList } from "./components/ProductList";
 import { ProductFilter } from "./components/ProductFilter";
 
@@ -16,7 +16,6 @@ export const ProductsPage = () => {
 					<ProductList />
 				</Flex>
 			</>
-			{/* )} */}
 		</>
 	);
 };

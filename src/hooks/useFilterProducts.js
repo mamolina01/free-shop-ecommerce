@@ -1,7 +1,5 @@
-import { filter } from "@chakra-ui/react";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { FreeShopContext } from "../context";
-import { useGetProducts } from "./useGetProducts";
 
 export const useFilterProducts = (filterItem, filterBy) => {
 	const { products, setFilteredProducts, setIsLoading } =
@@ -45,7 +43,6 @@ export const useFilterProducts = (filterItem, filterBy) => {
 				break;
 			case "category":
 				getCategories(filterItem);
-				// setFilteredProducts(result);
 				break;
 			case "":
 				setFilteredProducts([]);

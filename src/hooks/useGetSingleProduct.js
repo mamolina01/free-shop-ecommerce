@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { FreeShopContext } from "../context";
+import { useEffect, useState } from "react";
 
 export const useGetSingleProduct = (query = "") => {
   const [products, setProducts] = useState([]);
@@ -7,7 +6,6 @@ export const useGetSingleProduct = (query = "") => {
 
   const manageApi = async () => {
     try {
-      // const response = await fetch(`https://fakestoreapi.com/products/${query}?limit=${limit*8}`)
       const response = await fetch(`https://fakestoreapi.com/products/${query}`)
         .then((response) => response.json())
         .then((result) => result);

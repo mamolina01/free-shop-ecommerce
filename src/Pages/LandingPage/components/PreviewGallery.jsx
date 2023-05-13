@@ -1,14 +1,12 @@
-import { Flex, Grid, GridItem, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-
-import React from "react";
+import { Grid, GridItem } from "@chakra-ui/react";
+import { PreviewGalleryItem } from "./PreviewGalleryItem";
 
 export const PreviewGallery = () => {
 	return (
 		<Grid
 			templateColumns={{ base: "repeat(1,1fr)", md: "repeat(2,1fr)" }}
 			gap="1rem"
-			backgroundColor="white"
+			backgroundColor="main"
 			padding="1em"
 			margin="2em"
 		>
@@ -20,28 +18,7 @@ export const PreviewGallery = () => {
 				backgroundSize="cover"
 				backgroundPosition="center"
 			>
-				<Link to="/products">
-					<Flex
-						height="100%"
-						justifyContent="center"
-						placeItems="center"
-						backgroundColor="rgba(0,0,0,0.5)"
-						cursor="pointer"
-						_hover={{
-							backgroundColor: "rgba(0,0,0,0.7)",
-							transition: "0.8s",
-						}}
-					>
-						<Text
-							color="white"
-							fontWeight="600"
-							fontSize="3xl"
-							alignContent="center"
-						>
-							Clothes
-						</Text>
-					</Flex>
-				</Link>
+				<PreviewGalleryItem name="Clothes" />
 			</GridItem>
 			<GridItem
 				colSpan={{ base: 2, md: 1 }}
@@ -51,28 +28,7 @@ export const PreviewGallery = () => {
 				backgroundSize="cover"
 				backgroundPosition="center"
 			>
-				<Link to="/products">
-					<Flex
-						height="100%"
-						justifyContent="center"
-						placeItems="center"
-						backgroundColor="rgba(0,0,0,0.5)"
-						cursor="pointer"
-						_hover={{
-							backgroundColor: "rgba(0,0,0,0.7)",
-							transition: "0.8s",
-						}}
-					>
-						<Text
-							color="white"
-							fontWeight="600"
-							fontSize="3xl"
-							alignContent="center"
-						>
-							Technology
-						</Text>
-					</Flex>
-				</Link>
+				<PreviewGalleryItem name="Technology" />
 			</GridItem>
 			<GridItem
 				colSpan={{ base: 2, md: 1 }}
@@ -82,28 +38,7 @@ export const PreviewGallery = () => {
 				backgroundSize="cover"
 				backgroundPosition="center"
 			>
-				<Link to="/products">
-					<Flex
-						height="100%"
-						justifyContent="center"
-						placeItems="center"
-						backgroundColor="rgba(0,0,0,0.5)"
-						cursor="pointer"
-						_hover={{
-							backgroundColor: "rgba(0,0,0,0.7)",
-							transition: "0.8s",
-						}}
-					>
-						<Text
-							color="white"
-							fontWeight="600"
-							fontSize="3xl"
-							alignContent="center"
-						>
-							Jewellery
-						</Text>
-					</Flex>
-				</Link>
+				<PreviewGalleryItem name="Jewellery" />
 			</GridItem>
 		</Grid>
 	);

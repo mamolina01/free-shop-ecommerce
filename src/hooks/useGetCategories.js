@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 
 export const useGetCategories = () => {
-	const [isLoading, setIsLoading] = useState(true);
 	const [categories, setCategories] = useState([]);
-	
+
 	const manageApi = async () => {
 		try {
 			const response = await fetch(
@@ -19,19 +18,17 @@ export const useGetCategories = () => {
 	};
 
 	const getCategories = async () => {
-		// setIsLoading(true)
-			try {
-				const categories = await manageApi();
-				setCategories(categories);
-			} catch (error) {
-				console.log(error);
-			}
-			setIsLoading(false);
+		try {
+			const categories = await manageApi();
+			setCategories(categories);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	useEffect(() => {
 		getCategories();
 	}, []);
 
-	return { categories, isLoading };
+	return { categories };
 };
