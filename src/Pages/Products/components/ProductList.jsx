@@ -52,6 +52,7 @@ export const ProductList = () => {
 						<Flex
 							textAlign="center"
 							alignContent="center"
+							marginBottom="1em"
 							justify="center"
 							flexWrap="wrap"
 							gap={{ base: "1em", md: "2em" }}

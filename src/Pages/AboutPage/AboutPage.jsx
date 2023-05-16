@@ -7,7 +7,7 @@ export const AboutPage = () => {
 					About Us
 				</Text>
 			</Flex>
-			<Flex justify="center" margin="1em">
+			<Flex justify="center" marginBottom="1em">
 				<Flex
 					backgroundColor="main"
 					padding="1em"

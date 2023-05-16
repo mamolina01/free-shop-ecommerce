@@ -69,10 +69,12 @@ export const ProductFilter = () => {
 				</Flex>
 				<Flex
 					position="absolute"
+					borderTop="1px solid"
+					borderColor="whiteAlpha.500"
 					zIndex="10"
 					shadow="xl"
 					marginTop="2em"
-					backgroundColor="#574aa8"
+					backgroundColor="main"
 					display={{ base: showFilter ? "flex" : "none", md: "none" }}
 					flexDirection="column"
 					fontWeight="500"
